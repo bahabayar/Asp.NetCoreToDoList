@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Asp.NetCoreToDoList.Core\Asp.NetCoreToDoList.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>
