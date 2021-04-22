@@ -32,7 +32,9 @@ namespace Asp.NetCoreToDoList.API
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(Configuration
-                    ["ConnectionStrings:SqlConstr"].ToString());
+                    ["ConnectionStrings:SqlConstr"].ToString(),o=> {
+                        o.MigrationsAssembly("Asp.NetCoreToDoList.Data");
+                    });
             });
             services.AddScoped<IUnitOfWork, UnitOfWork>(); 
             services.AddControllers();

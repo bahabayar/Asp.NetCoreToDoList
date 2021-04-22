@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Asp.NetCoreToDoList.Core\Asp.NetCoreToDoList.Core.csproj" />
     <ProjectReference Include="..\Asp.NetCoreToDoList.Data\Asp.NetCoreToDoList.Data.csproj" />
     <ProjectReference Include="..\Asp.NetCoreToDoList.Service\Asp.NetCoreToDoList.Service.csproj" />
