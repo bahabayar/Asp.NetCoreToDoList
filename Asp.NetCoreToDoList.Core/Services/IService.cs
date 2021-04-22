@@ -9,7 +9,7 @@ namespace Asp.NetCoreToDoList.Core.Services
     {
         Task<TEntity> GetByIdAsync(int id);
         Task<IEnumerable<TEntity>> GetAllAsync();
-        Task AddAsync(TEntity entity);
+        Task<TEntity> AddAsync(TEntity entity);
         void Remove(TEntity entity);
         TEntity Update(TEntity entity);
     }
