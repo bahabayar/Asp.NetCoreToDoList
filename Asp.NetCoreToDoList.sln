@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.31025.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.NetCoreToDoList.API", "Asp.NetCoreToDoList.API\Asp.NetCoreToDoList.API.csproj", "{4FA720BF-C34F-4DE1-882B-9FCA0E99D6C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.NetCoreToDoList.Core", "Asp.NetCoreToDoList.Core\Asp.NetCoreToDoList.Core.csproj", "{8270E8C8-8876-44A3-B33B-79151BF6FD58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.NetCoreToDoList.Data", "Asp.NetCoreToDoList.Data\Asp.NetCoreToDoList.Data.csproj", "{E1386501-B932-4A52-B71F-D0576E3862F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp.NetCoreToDoList.Service", "Asp.NetCoreToDoList.Service\Asp.NetCoreToDoList.Service.csproj", "{E6DA3644-9C03-476F-9C56-473DDFF328FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{4FA720BF-C34F-4DE1-882B-9FCA0E99D6C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FA720BF-C34F-4DE1-882B-9FCA0E99D6C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FA720BF-C34F-4DE1-882B-9FCA0E99D6C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8270E8C8-8876-44A3-B33B-79151BF6FD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8270E8C8-8876-44A3-B33B-79151BF6FD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8270E8C8-8876-44A3-B33B-79151BF6FD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8270E8C8-8876-44A3-B33B-79151BF6FD58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1386501-B932-4A52-B71F-D0576E3862F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1386501-B932-4A52-B71F-D0576E3862F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1386501-B932-4A52-B71F-D0576E3862F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1386501-B932-4A52-B71F-D0576E3862F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6DA3644-9C03-476F-9C56-473DDFF328FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6DA3644-9C03-476F-9C56-473DDFF328FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6DA3644-9C03-476F-9C56-473DDFF328FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6DA3644-9C03-476F-9C56-473DDFF328FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
