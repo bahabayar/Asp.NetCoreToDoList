@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Asp.NetCoreToDoList.Core\Asp.NetCoreToDoList.Core.csproj" />
+    <ProjectReference Include="..\Asp.NetCoreToDoList.Data\Asp.NetCoreToDoList.Data.csproj" />
+  </ItemGroup>
+
 </Project>
