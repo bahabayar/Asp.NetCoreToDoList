@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Asp.NetCoreToDoList.Data.Repositories
 {
    
-    class Repository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         public readonly DbContext _context;
         public readonly DbSet<TEntity> _dbset;

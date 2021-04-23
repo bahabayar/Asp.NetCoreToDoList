@@ -1,6 +1,10 @@
+using Asp.NetCoreToDoList.Core.Repositories;
+using Asp.NetCoreToDoList.Core.Services;
 using Asp.NetCoreToDoList.Core.UnitOfWorks;
 using Asp.NetCoreToDoList.Data;
+using Asp.NetCoreToDoList.Data.Repositories;
 using Asp.NetCoreToDoList.Data.UnitOfWorks;
+using Asp.NetCoreToDoList.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,6 +33,9 @@ namespace Asp.NetCoreToDoList.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IService<>), typeof(Service<>));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(Configuration
@@ -36,7 +43,7 @@ namespace Asp.NetCoreToDoList.API
                         o.MigrationsAssembly("Asp.NetCoreToDoList.Data");
                     });
             });
-            services.AddScoped<IUnitOfWork, UnitOfWork>(); 
+            
             services.AddControllers();
         }
 
