@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Asp.NetCoreToDoList.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210422031500_Initial")]
+    [Migration("20210423214213_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

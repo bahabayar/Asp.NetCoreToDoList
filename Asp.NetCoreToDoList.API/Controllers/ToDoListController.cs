@@ -31,5 +31,11 @@ namespace Asp.NetCoreToDoList.API.Controllers
             var toDo = await _toDoListService.GetByIdAsync(id);
             return Ok(toDo);
         }
+        [HttpPost]
+        public async Task<IActionResult> Save(ToDoList toDoList)
+        {
+            var newToDoList = await _toDoListService.AddAsync(toDoList);
+            return Ok(newToDoList);
+        }
     }
 }

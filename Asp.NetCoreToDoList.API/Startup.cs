@@ -34,7 +34,7 @@ namespace Asp.NetCoreToDoList.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-            services.AddScoped(typeof(IService<>), typeof(Service<>));
+            services.AddScoped(typeof(IService<>), typeof(Service.Service<>));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddDbContext<AppDbContext>(options =>
             {

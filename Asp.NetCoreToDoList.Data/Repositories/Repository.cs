@@ -12,7 +12,7 @@ namespace Asp.NetCoreToDoList.Data.Repositories
     {
         public readonly DbContext _context;
         public readonly DbSet<TEntity> _dbset;
-        public Repository(DbContext context)
+        public Repository(AppDbContext context)
         {
             _context = context;
             _dbset = context.Set<TEntity>();
