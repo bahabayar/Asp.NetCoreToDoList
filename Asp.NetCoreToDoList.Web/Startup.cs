@@ -4,6 +4,7 @@ using Asp.NetCoreToDoList.Core.UnitOfWorks;
 using Asp.NetCoreToDoList.Data;
 using Asp.NetCoreToDoList.Data.Repositories;
 using Asp.NetCoreToDoList.Data.UnitOfWorks;
+using Asp.NetCoreToDoList.Web.ApiService;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,7 @@ namespace Asp.NetCoreToDoList.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHttpClient<ToDoListApiService>(opt => { opt.BaseAddress = new Uri(Configuration["baseUrl"]); });
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IService<>), typeof(Service.Service<>));
