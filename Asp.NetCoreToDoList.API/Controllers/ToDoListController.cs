@@ -35,11 +35,24 @@ namespace Asp.NetCoreToDoList.API.Controllers
             return Ok(_mapper.Map<ToDoListDTO>(toDo));
         }
         [HttpPost]
-        public async Task<IActionResult> Save(ToDoList toDoList)
+        public async Task<IActionResult> Save(ToDoListDTO toDoListDTO)
         {
-            var newToDoList = await _toDoListService.AddAsync(toDoList);
+            var newToDoList = await _toDoListService.AddAsync(_mapper.Map<ToDoList>(toDoListDTO));
             return Created(string.Empty,_mapper.Map<ToDoList>(newToDoList));
         }
         [HttpPut]
+        public IActionResult Update(ToDoListDTO toDoListDTO)
+        {
+
+            var toDoList = _toDoListService.Update(_mapper.Map<ToDoList>(toDoListDTO));
+            return NoContent();
+        }
+        [HttpDelete("{id}")]
+        public IActionResult Remove(int id)
+        {
+            var deletedTodo = _toDoListService.GetByIdAsync(id).Result;
+            _toDoListService.Remove(deletedTodo);
+            return NoContent();
+        }
     }
 }

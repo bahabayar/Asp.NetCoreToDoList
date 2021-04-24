@@ -20,6 +20,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 
+
 namespace Asp.NetCoreToDoList.API
 {
     public class Startup
@@ -34,6 +35,7 @@ namespace Asp.NetCoreToDoList.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSwaggerGen();
             services.AddAutoMapper(typeof(Startup));
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IService<>), typeof(Service.Service<>));
@@ -47,6 +49,8 @@ namespace Asp.NetCoreToDoList.API
             });
             
             services.AddControllers();
+            
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -67,6 +71,12 @@ namespace Asp.NetCoreToDoList.API
             {
                 endpoints.MapControllers();
             });
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+           
         }
     }
 }
