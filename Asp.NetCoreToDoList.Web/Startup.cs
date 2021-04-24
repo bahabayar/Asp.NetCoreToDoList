@@ -1,6 +1,13 @@
+using Asp.NetCoreToDoList.Core.Repositories;
+using Asp.NetCoreToDoList.Core.Services;
+using Asp.NetCoreToDoList.Core.UnitOfWorks;
+using Asp.NetCoreToDoList.Data;
+using Asp.NetCoreToDoList.Data.Repositories;
+using Asp.NetCoreToDoList.Data.UnitOfWorks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,6 +30,16 @@ namespace Asp.NetCoreToDoList.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IService<>), typeof(Service.Service<>));
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration
+                    ["ConnectionStrings:SqlConstr"].ToString(), o => {
+                        o.MigrationsAssembly("Asp.NetCoreToDoList.Data");
+                    });
+            });
             services.AddControllersWithViews();
         }
 
