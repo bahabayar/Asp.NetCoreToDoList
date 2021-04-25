@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ToDoListDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h1>ToDoList</h1>
+<a class="btn btn-primary mb-3" asp-action="Add Work To Do"></a>
+<table class="table table-bordered">
+    <thead>
+
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TaskName</td>
+                <td>@item.TaskDescription</td>
+                <td><a asp-action="Update" asp-route-id="@item.Id">Update</a></td>
+                <td><a asp-action="Delete" asp-route-id="@item.Id">Select </a></td>
+            </tr>
+        }
+    </tbody>
+
+</table>
