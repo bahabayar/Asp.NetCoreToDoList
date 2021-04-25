@@ -1,0 +1,26 @@
+﻿@model ToDoListDTO
+@{
+    ViewData["Title"] = "Update";
+}
+<h1>Update Task</h1>
+<div class="row">
+    <div class="col-md-4"></div>
+
+    <form asp-action="Update">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="TaskName">Task:</label>
+            <input asp-for="TaskName" class="form-control" />
+            <label asp-for="TaskDescription">Task Description:</label>
+            <input asp-for="TaskDescription" class="form-control" />
+           
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Update" class="btn-primary" />
+
+
+        </div>
+    </form>
+
+</div>
